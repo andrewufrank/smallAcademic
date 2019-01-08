@@ -1,8 +1,0 @@
-{% extends 'master.html' %}
-
-{%- block content %}
-            <h1>test home A</h1>
-{% for page in files|sort(by="mtime", reverse=true) %}
-    {{ pagePreview(page) }}
-{% endfor %}
-{% endblock -%}
