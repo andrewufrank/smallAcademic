@@ -1,0 +1,75 @@
+# vim: ts=2 sw=2 expandtab
+definitions:
+  - &main_db
+    driver: 'sqlite'
+    dsn: './theme/stuff.sqlite'
+data:
+  menu: 'file://./theme/menu.yml'
+  settings: 'file://./theme/settings.yml'
+rules:
+- pattern: '/'   # the special home page for landing first 
+                 # should this be welcome? or welcome and then the last posts
+  data:
+#    file: 'file://./data/pages/welcome.markdown'
+    page: 'file://./data/pages/welcome.markdown'
+  template: 'page.html'  # remove home.html
+  
+
+
+- pattern: '/allPosts'
+  data:
+    posts:          # the variable name in postList.html
+      type: 'dir'
+      path:   './data/posts'  # the directory from which to collect 
+      fetch: 10
+      order: '-mtime'  # why repeated from postList.html
+  template:  'postList.html'
+
+# the static page for image and style.css
+- pattern: '/static/{{file:**}}'
+  data:
+    file: 'file://./theme/static/{{file}}'
+  static: true
+
+# the static page for user data
+- pattern: '/staticData/{{file:**}}'
+  data:
+    file: 'file://./data/staticData/{{file}}'
+  static: true
+ 
+ # the pages  
+- pattern: '/{{page:*}}' # why is this not relative to data??
+                                # - this is the called url!!
+  data:
+    file: 'glob://./data/pages/{{page}}.*'
+    page: 'file://./data/pages/{{page}}.*'
+  required: [ 'page' ]
+  template: 'page.html'
+  
+- pattern: '/cv/{{page:*}}'  # problem with constructed url 
+  data:
+    file: 'glob://./data/pages/cv/{{page}}.*'
+    page: 'file://./data/pages/cv/{{page}}.*'
+  required: [ 'page' ]
+  template: 'page.html'
+  
+# for the posts in separate posts dir  
+- pattern: '/posts/{{post:*}}'
+  data:
+    file: 'glob://./data/posts/{{post}}.*'
+    post: 'file://./data/posts/{{post}}.*'
+  required: [ 'post' ]   # property which must exist - always true? 
+  template: 'post.html'
+
+# for all files in the page folder, even in subdir
+- pattern: '/{{page:**}}' #  - this is the called url!!
+  data:
+    file: 'glob://./data/pages/{{page}}.*' # the file is relative to data, 
+                                     # {{page}} includes pages
+    page: 'file://./data/pages/{{page}}.*'
+  required: [ 'page' ]
+  template: 'page.html'
+# static serving works
+#    file: 'file://./data/{{page}}'
+#  static: true 
+

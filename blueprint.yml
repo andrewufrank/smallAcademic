@@ -1,0 +1,8 @@
+name: 'afBlog'
+summary: 'A websute for an academic'
+description: <
+    A website with a publication list which serves documents (pdf)
+    and other things desirable for an academic to inform others about.
+    Requires adding the folder with the docs separately.
+    Uses theme folder!
+screenshot: 'screenshot.png'
