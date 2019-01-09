@@ -1,0 +1,12 @@
+.stack-work
+*.lkshw
+**.HTF
+*.lkshs
+**/dist-newstyle
+**/dist
+**/*.old
+**/*.yaml.*
+**/*.log
+**/*.tmp
+**/baked
+**/docs/
