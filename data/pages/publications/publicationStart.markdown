@@ -9,6 +9,7 @@ Hofer, B. & Frank, A. U.   Composing Models of Geographic Physical Processes,  I
 
 
 ## Chronological [publication list](/staticData/allEntries.html) 
+
 A list with my publications, with my BibTex entries, including (often) abstracts and a link for download (PDF).
 
 
