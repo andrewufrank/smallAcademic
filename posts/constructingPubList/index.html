@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>     Constructing the publication list
+</title>
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <section class="hero">
+            <h1><br><br><a href="/">NN</a></h1>
+            <h3>Ph.D., researcher</h3>
+        </section>
+        <section class="header">
+            <section class="menu">
+            <span></span><menu><li>
+            <a href="/welcome"><span>Home</span></a>
+        </li><li>
+            <a href="/publications/publicationStart"><span>Publications</span></a>
+        </li><li>
+            <a href="/allPosts"><span>Blog</span></a>
+        </li><li>
+            <a href="/cv/minimalCV"><span>CV</span></a>
+        </li><li>
+            <a href="/contacts"><span>Contacs</span></a>
+        </li></menu>
+            </section>
+        </section>
+        <section class="content">
+            <h1>Constructing the publication list</h1>
+    <h2 id="bibtex-file">BibTex file</h2><p>The data used to produce the are likely already available in your BibTex file and can be exported from there. A useful list should give a visitor some means to search the list and to give for each entry the BibTex file to copy into your visitors BibTex file - you want to make it as easy as poissible to reference your work! - and to download the full text - again, you want it to make it easy for your visitor to obtain you work and (hopefully) find it interesting and cite it.</p><p>A BibTex file can be converted to html with the export facility of Jabref and with a small tool produced by Marc Schenk here include you get a good looking (not yet adapted to the appearance of your homepage style) and functional list. Check it out under “Publications”!</p><h2 id="step-by-step">Step by step</h2><ol type="1">
+<li><p>In Jabref under Options -&gt; Manage customs exports insert the file `listrefs.layout’ from the folder ‘MarkSchenk-jabref-export/listRefsWithFile’. Add a telling name, e.g. ‘listrefsWithFile’ and the desired type (i.e. ‘html’).</p></li>
+<li><p>Select the publications you want to include in the list (either a complete list or a partial list, featuring, for example, publications on a specific topic or year) and select ‘export selected entries’ and select the type (e.g. <code>listrefs</code>) and name the file.</p></li>
+<li><p>Move the html files you have produced and move them into ‘data/staticData’ - the example shows allEntries.html for a complete list and ‘selectedEntries.html’ for a selection.</p></li>
+<li><p>Go to ‘publications/publicationsStart.markdown’ and enter the url link to the files you have pasted. Be careful to write the link as <code>/staticData/allEntries.html</code>.</p></li>
+</ol>
+    <hr>
+     <p class="meta tiny">
+        01/08/2019 file constructingPubList with post.html
+    </p>
+        </section>
+    
+     <p class="meta tiny">
+        Produced with Sprinkles on .
+    </p>
+    </body>
+</html>
+
