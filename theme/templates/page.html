@@ -1,0 +1,15 @@
+{%- extends 'master.html' -%}
+
+{%- block title %}
+    {{ pageTitle(page) }}
+{% endblock -%}
+
+{%- block content %}
+    <h1>{{ pageTitle(page) }}</h1> 
+    {{ removePageHeading(page) }}
+    <hr>
+     <p class="meta tiny">
+        {{ page.props.mtimeUTC|date('%x') }} file {{ page.props.name }} with page.html
+    </p>
+
+{% endblock -%}
