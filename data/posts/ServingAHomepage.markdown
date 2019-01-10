@@ -1,6 +1,12 @@
-# Serving a homepage
+---
+title: Serving a homepage
+author: auf 
+date: Jan. 8, 2019
+keywords: homepage
+abstract: How to construct a publication list from a BibTex file.
+---
 
-Constructing a simple homepage, perhaps with a blog and some images is 
+Constructing a simple homepage, perhaps with a blog and some images 
 can be done in a few hours, possibly days 
 with a tool like wordpress. To make something a bit more personal, 
 satisfying some special requirements takes a bit of planning of content

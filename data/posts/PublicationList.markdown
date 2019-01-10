@@ -1,4 +1,10 @@
-# Principles for a researchers home page
+---
+title: Principles for a researchers homepage
+author: auf 
+date: Jan. 7, 2019
+keywords: homepage
+abstract: Design principles for a program to academic homepages.
+---
 
 A researchers homepage contains information which must be updated often; 
 it reflects poorly on you if your homepage does not include the latest funding

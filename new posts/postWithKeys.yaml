@@ -1,0 +1,13 @@
+title : PostWithKeys 
+author: auf 
+date: Jan. 10, 2019
+
+----
+keywords : test, markdown
+abstrac: Just some simple example.
+----
+body: | 
+
+  # Post one
+
+  An example post.

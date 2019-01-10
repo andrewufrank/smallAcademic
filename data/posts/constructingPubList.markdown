@@ -1,4 +1,11 @@
-# Constructing the publication list
+---
+title: Constructing the publication list
+author: auf 
+date: Jan. 8, 2019
+keywords: homepage
+abstract: How to construct a publication list from a BibTex file.
+---
+
 
 ## BibTex file
 
