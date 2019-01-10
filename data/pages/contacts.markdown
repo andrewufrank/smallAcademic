@@ -3,7 +3,7 @@
 ## Address University
 
 Research Group with 2 blanks at end  
-to achieve a newline, but no additiona space  
+to achieve a newlinel 
 University of Hell  
 1 Main Street  
 Hell (MX)
