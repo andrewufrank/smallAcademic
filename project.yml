@@ -61,10 +61,14 @@ rules:
 #    post: 'file://./data/posts/{{post}}.*'
 #  required: [ 'post' ]   # property which must exist - always true? 
 #  template: 'post.html'
-          file:
-            type: 'subprocess'
-            cmd: [ './make-pdf.sh', '{{file}}' ]
-            mime-type: 'application/html'
+
+ #         file:
+ #           type: 'subprocess'
+ #           cmd: [ './make-pdf.sh', '{{file}}' ]
+ #           mime-type: 'application/pdf'
+          post: 'file://./data/posts/{{post}}.markdown'  # the unprocessed 
+  required: [ 'post' ]   # property which must exist - always true? 
+  template: 'post.html'
 
 #rules:
 #    - pattern: '/{{file:*}}.pdf'
