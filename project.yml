@@ -22,7 +22,7 @@ rules:
       type: 'dir'
       path:   './data/posts'  # the directory from which to collect 
       fetch: 10
-      order: '-mtime'  # why repeated from postList.html
+      order: '-name'  # why repeated from postList.html
   template:  'postList.html'
 
 # the static page for image and style.css
@@ -48,18 +48,33 @@ rules:
   
 - pattern: '/cv/{{page:*}}'  # problem with constructed url 
   data:
-    file: 'glob://./data/pages/cv/{{page}}.*'
+#    file: 'glob://./data/pages/cv/{{page}}.*'
     page: 'file://./data/pages/cv/{{page}}.*'
   required: [ 'page' ]
   template: 'page.html'
   
 # for the posts in separate posts dir  
+# changed for use of subprocess make-pdf.sh
 - pattern: '/posts/{{post:*}}'
   data:
-    file: 'glob://./data/posts/{{post}}.*'
-    post: 'file://./data/posts/{{post}}.*'
-  required: [ 'post' ]   # property which must exist - always true? 
-  template: 'post.html'
+#   file: 'glob://./data/posts/{{post}}.*'
+#    post: 'file://./data/posts/{{post}}.*'
+#  required: [ 'post' ]   # property which must exist - always true? 
+#  template: 'post.html'
+      data:
+          file:
+            type: 'subprocess'
+            cmd: [ './make-pdf.sh', '{{file}}' ]
+            mime-type: 'application/html'
+
+#rules:
+#    - pattern: '/{{file:*}}.pdf'
+#      static: true
+#      data:
+#          file:
+#            type: 'subprocess'
+#            cmd: [ './make-pdf.sh', '{{file}}' ]
+#            mime-type: 'application/pdf'
 
 # for all files in the page folder, even in subdir
 - pattern: '/{{page:**}}' #  - this is the called url!!

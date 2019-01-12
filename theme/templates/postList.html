@@ -1,9 +1,9 @@
 {% extends 'master.html' %}
 
 {%- block content %}
-{% for post in posts|sort(by="mtime", reverse=true) %}
+{% for post in posts|sort(by="mtime") %}
    <p> <a href="/posts/{{ post.props.name }}"> 
-    {{ post.meta.title }} <br> Keywords: {{ post.meta.keywords }} -- {{ post.meta.abstract }}  
+    {{ post.meta.title }}  <br> Keywords: {{ post.meta.keywords }} -- {{ post.meta.abstract }}  
    </p>
 {% endfor %}
     <hr>
