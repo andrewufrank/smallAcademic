@@ -1,13 +1,13 @@
 {% extends 'master.html' %}
 
 {%- block content %}
-{% for post in posts|sort(by="mtime", reverse=true) %}
-   <p> <a href="/posts/{{ post.props.name }}"> 
-    {{ post.meta.title }} <br> Keywords: {{ post.meta.keywords }} -- {{ post.meta.abstract }}  
+{% for postVar in postsVar|sort(by="mtime", reverse=true) %}
+   <p> <a href="/posts/{{ postVar.props.name }}"> 
+    {{ postVar.meta.title }} <br> Keywords: {{ postVar.meta.keywords }} -- {{ postVar.meta.abstract }}  
    </p>
 {% endfor %}
     <hr>
      <p class="meta tiny">
-        {{ page.props.mtimeUTC|date('%x') }} with file postList.html 
+        {{ postVar.props.mtimeUTC|date('%x') }} with file postList.html 
     </p>
 {% endblock -%}

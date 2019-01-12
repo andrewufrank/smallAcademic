@@ -1,4 +1,6 @@
 # vim: ts=2 sw=2 expandtab
+
+# rules are scanned top down till the first applies
 definitions:
   - &main_db
     driver: 'sqlite'
@@ -6,19 +8,17 @@ definitions:
 data:
   menu: 'file://./menu.yml'
   settings: 'file://./settings.yml'
+
 rules:
 - pattern: '/'   # the special home page for landing first 
-                 # should this be welcome? or welcome and then the last posts
   data:
-#    file: 'file://./data/pages/welcome.markdown'
-    page: 'file://./data/pages/welcome.markdown'
-  template: 'page.html'  # remove home.html
+#    file: 'file://./data/pages/welcome.markdown'   # no file, is single page
+    pageVar: 'file://./data/pages/welcome.markdown'
+  template: 'pageTemplate.html'  # remove home.html
   
-
-
 - pattern: '/allPosts'
   data:
-    posts:          # the variable name in postList.html
+    postsVar:          # the variable name in postList.html
       type: 'dir'
       path:   './data/posts'  # the directory from which to collect 
       fetch: 10
@@ -42,16 +42,16 @@ rules:
                                 # - this is the called url!!
   data:
     file: 'glob://./data/pages/{{page}}.*'
-    page: 'file://./data/pages/{{page}}.*'
-  required: [ 'page' ]
-  template: 'page.html'
+    pageVar: 'file://./data/pages/{{page}}.*'
+  required: [ 'pageVar' ]
+  template: 'pageTemplate.html'
   
 - pattern: '/cv/{{page:*}}'  # problem with constructed url 
   data:
     file: 'glob://./data/pages/cv/{{page}}.*'
-    page: 'file://./data/pages/cv/{{page}}.*'
-  required: [ 'page' ]
-  template: 'page.html'
+    pageVar: 'file://./data/pages/cv/{{page}}.*'
+  required: [ 'pageVar' ]
+  template: 'pageTemplate.html'
   
 # for the posts in separate posts dir  
 - pattern: '/posts/{{post:*}}'
@@ -66,9 +66,9 @@ rules:
   data:
     file: 'glob://./data/pages/{{page}}.*' # the file is relative to data, 
                                      # {{page}} includes pages
-    page: 'file://./data/pages/{{page}}.*'
-  required: [ 'page' ]
-  template: 'page.html'
+    pageVar: 'file://./data/pages/{{page}}.*'
+  required: [ 'pageVar' ]
+  template: 'pageTemplate.html'
 # static serving works
 #    file: 'file://./data/{{page}}'
 #  static: true 
