@@ -1,0 +1,18 @@
+{%- extends 'masterTemplate.html' -%}
+
+{%- block title %}
+     {{ pageTitle(postVar) }}
+{% endblock -%}
+
+{%- block content %}
+    <h1>{{ pageTitle(postVar) }}</h1>
+    {{ removePageHeading(postVar) }}
+    <hr>
+    <p>	Keywords: {{ postVar.meta.keywords }}  </p>
+    <p> Abstract: {{ postVar.meta.abstract }} </p>
+    <p> Date: {{ postVar.meta.date }} </p>
+    
+     <p class="meta tiny">
+        {{ post.props.mtimeUTC|date('%x') }} file {{ postVar.props.name }} with postTemplate.html XX
+    </p>
+{% endblock -%}
