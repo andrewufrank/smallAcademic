@@ -61,7 +61,6 @@ rules:
 #    post: 'file://./data/posts/{{post}}.*'
 #  required: [ 'post' ]   # property which must exist - always true? 
 #  template: 'post.html'
-      data:
           file:
             type: 'subprocess'
             cmd: [ './make-pdf.sh', '{{file}}' ]
