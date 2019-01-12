@@ -32,44 +32,40 @@ rules:
   static: true
 
 # the static page for user data
-- pattern: '/staticData/{{file:**}}'
+- pattern: '/staticData/{{filePath:**}}'
   data:
-    file: 'file://./data/staticData/{{file}}'
+    file: 'file://./data/staticData/{{filePath}}'
   static: true
  
  # the pages  
-- pattern: '/{{page:*}}' # why is this not relative to data??
+- pattern: '/{{file:*}}' # why is this not relative to data??
                                 # - this is the called url!!
   data:
-    file: 'glob://./data/pages/{{page}}.*'
-    pageVar: 'file://./data/pages/{{page}}.*'
+    pageVar: 'file://./data/pages/{{file}}.*'
   required: [ 'pageVar' ]
   template: 'pageTemplate.html'
   
-- pattern: '/cv/{{page:*}}'  # problem with constructed url 
+- pattern: '/cv/{{file:*}}'  # problem with constructed url 
   data:
-    file: 'glob://./data/pages/cv/{{page}}.*'
-    pageVar: 'file://./data/pages/cv/{{page}}.*'
+    file: 'glob://./data/pages/cv/{{file}}.*'
+    pageVar: 'file://./data/pages/cv/{{file}}.*'
   required: [ 'pageVar' ]
   template: 'pageTemplate.html'
   
 # for the posts in separate posts dir  
-- pattern: '/posts/{{post:*}}'
+- pattern: '/posts/{{file:*}}'
   data:
-    file: 'glob://./data/posts/{{post}}.*'
-    post: 'file://./data/posts/{{post}}.*'
-  required: [ 'post' ]   # property which must exist - always true? 
-  template: 'post.html'
+#    file: 'glob://./data/posts/{{file}}.*'
+    postVar: 'file://./data/posts/{{file}}.*'
+  required: [ 'postVar' ]   # property which must exist - always true? 
+  template: 'postTemplate.html'
 
 # for all files in the page folder, even in subdir
-- pattern: '/{{page:**}}' #  - this is the called url!!
+- pattern: '/{{filePath:**}}' #  - this is the called url!!
   data:
-    file: 'glob://./data/pages/{{page}}.*' # the file is relative to data, 
-                                     # {{page}} includes pages
-    pageVar: 'file://./data/pages/{{page}}.*'
+#    file: 'glob://./data/pages/{{filePath}}.*' # the file is relative to data, 
+                                     
+    pageVar: 'file://./data/pages/{{filePath}}.*'
   required: [ 'pageVar' ]
   template: 'pageTemplate.html'
-# static serving works
-#    file: 'file://./data/{{page}}'
-#  static: true 
 
