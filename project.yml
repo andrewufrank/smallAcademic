@@ -2,10 +2,10 @@
 definitions:
   - &main_db
     driver: 'sqlite'
-    dsn: './theme/stuff.sqlite'
+    dsn: './stuff.sqlite'
 data:
-  menu: 'file://./theme/menu.yml'
-  settings: 'file://./theme/settings.yml'
+  menu: 'file://./menu.yml'
+  settings: 'file://./settings.yml'
 rules:
 - pattern: '/'   # the special home page for landing first 
                  # should this be welcome? or welcome and then the last posts
@@ -28,7 +28,7 @@ rules:
 # the static page for image and style.css
 - pattern: '/static/{{file:**}}'
   data:
-    file: 'file://./theme/static/{{file}}'
+    file: 'file://./static/{{file}}'
   static: true
 
 # the static page for user data
