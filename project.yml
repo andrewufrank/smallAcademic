@@ -57,16 +57,16 @@ rules:
 # changed for use of subprocess make-pdf.sh
 - pattern: '/posts/{{post:*}}'
   data:
-#   file: 'glob://./data/posts/{{post}}.*'
+#    file: 'glob://./data/posts/{{post}}.*'
 #    post: 'file://./data/posts/{{post}}.*'
 #  required: [ 'post' ]   # property which must exist - always true? 
 #  template: 'post.html'
 
-           file:
+    post:
              type: 'subprocess'
-             cmd: [ './make-html.sh', '{{file}}' ]
+             cmd: [ './make-html.sh', '{{post}}' ]
              mime-type: 'application/pdf'
-           post: 'file://./data/posts/{{post}}.html'  # the unprocessed 
+  #         post: 'file://./data/posts/{{post}}.html'  # the unprocessed 
   required: [ 'post' ]   # property which must exist - always true? 
   template: 'post.html'
 
