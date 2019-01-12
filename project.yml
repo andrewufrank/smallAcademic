@@ -15,6 +15,13 @@ rules:
   template: 'page.html'  # remove home.html
   
 
+- pattern: '/'   ## a pattern to fill date in templates
+  template: 'master.html'
+  data:
+      - now:
+          type: subprocess
+          cmd: ['date']
+          mime-type: 'text/plain'
 
 - pattern: '/allPosts'
   data:
