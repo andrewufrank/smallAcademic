@@ -55,16 +55,13 @@ rules:
 # for the posts in separate posts dir  
 - pattern: '/posts/{{file:*}}'
   data:
-#    file: 'glob://./data/posts/{{file}}.*'
     postVar: 'file://./data/posts/{{file}}.*'
   required: [ 'postVar' ]   # property which must exist - always true? 
   template: 'postTemplate.html'
 
 # for all files in the page folder, even in subdir
 - pattern: '/{{filePath:**}}' #  - this is the called url!!
-  data:
-#    file: 'glob://./data/pages/{{filePath}}.*' # the file is relative to data, 
-                                     
+  data:                                   
     pageVar: 'file://./data/pages/{{filePath}}.*'
   required: [ 'pageVar' ]
   template: 'pageTemplate.html'
