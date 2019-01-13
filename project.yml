@@ -30,6 +30,11 @@ rules:
   data:
     file: 'file://./static/{{file}}'
   static: true
+# the image page for images for posts
+- pattern: '/images/{{file:**}}'
+  data:
+    file: 'file://./data/images/{{file}}'
+  static: true
 
 # the static page for user data
 - pattern: '/staticData/{{filePath:**}}'
