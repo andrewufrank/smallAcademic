@@ -51,6 +51,12 @@ hr {
     vertical-align: top;
 }
 
+.heroNoImage {
+    padding: 0 1rem;
+    color: #15100c;
+    font-weight: bold;
+    vertical-align: top;
+}
 .hero h1 {
     font-size: 4rem;
     line-height: 1.5;

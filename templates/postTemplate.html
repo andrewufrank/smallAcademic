@@ -1,4 +1,4 @@
-{%- extends 'masterTemplate.html' -%}
+{%- extends 'masterNoImageTemplate.html' -%}
 
 {%- block title %}
      {{ pageTitle(postVar) }}
@@ -13,6 +13,6 @@
     <p> Date: {{ postVar.meta.date }} </p>
     
      <p class="meta tiny">
-        {{ post.props.mtimeUTC|date('%x') }} file {{ postVar.props.name }} with postTemplate.html XX
+        {{ post.props.mtimeUTC|date('%x') }} file {{ postVar.props.name }} with postTemplate.html NoImage
     </p>
 {% endblock -%}
