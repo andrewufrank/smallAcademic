@@ -89,6 +89,20 @@ hr {
     box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
 }
 
+.contentNoImages img {
+    display: block;
+    width: 60%;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+    margin-left: auto;
+    margin-right: auto;     
+}
+
+.contentNoImages2 img {
+    max-width: 800px;
+    box-shadow: 4px 4px 12px rgba(0,0,0,0.5);
+    align-items: center;
+}
+
 .stuff {
     float: right;
     height: 100%;
