@@ -9,5 +9,5 @@ pandoc --filter pandoc-citeproc \
      "$1.md" -o "$1.pdf" && \
      cat "$1.pdf"
 
-echo "pandoc-citeproc executed" 
+# echo "pandoc-citeproc executed" 
 

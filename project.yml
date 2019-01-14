@@ -65,7 +65,7 @@ rules:
 
 #    post:
              type: 'subprocess'
-             cmd: [ './make-html.sh', '{{postfile}}' ]
+             cmd: [ './make-pdf.sh', '{{postfile}}' ]
              mime-type: 'application/pdf'
 #         post: 'file://./data/posts/{{post}}.html'  # the unprocessed 
 #  required: [ 'post' ]   # property which must exist - always true? 
