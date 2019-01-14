@@ -6,13 +6,14 @@
 
 {%- block content %}
     <h1>{{ pageTitle(postVar) }}</h1>
-     
-      <img src="/../../images/DSC02769.JPG" alt="HTML5 Icon /../../images/DSC02769.JPG" style="width:auto,height:1000px;"> 
+     <p> image : {{ postVar.meta.image }} </p>
+      <img src="/../../images/{{ postVar.meta.image }}"  alt="HTML5 Icon /../../images/{{ postVar.meta.image }}"  style="width:auto,height:1000px;"> 
     {{ removePageHeading(postVar) }}
     <hr>
     <p>	Keywords: {{ postVar.meta.keywords }}  </p>
     <p> Abstract: {{ postVar.meta.abstract }} </p>
     <p> Date: {{ postVar.meta.date }} </p>
+    <p> Image: {{ postVar.meta.image }} </p>
     
      <p class="meta tiny">
         {{ post.props.mtimeUTC|date('%x') }} file {{ postVar.props.name }} with postTemplate.html NoImage

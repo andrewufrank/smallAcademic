@@ -4,6 +4,7 @@ author: auf
 date: Jan. 8, 2019
 keywords: homepage
 abstract: How to construct a publication list from a BibTex file.
+image: DSC02769.JPG
 ---
 
 Constructing a simple homepage, perhaps with a blog and some images 
