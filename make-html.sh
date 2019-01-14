@@ -9,6 +9,4 @@ pandoc --filter pandoc-citeproc \
      "$1.md" -o "$1.html" && \
      cat "$1.html"
 
-echo "pandoc-citeproc executed" 
-
 
