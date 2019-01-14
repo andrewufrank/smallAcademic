@@ -56,7 +56,7 @@ rules:
 # for the posts in separate posts dir  
 # changed for use of subprocess make-pdf.sh
 - pattern: '/posts/{{postfile:*}}'
-  static : true 
+#  static : true 
   data:
     file: # 'glob://./data/posts/{{postfile}}.md'
 #    post: 'file://./data/posts/{{post}}.*'
@@ -65,11 +65,11 @@ rules:
 
 #    post:
              type: 'subprocess'
-             cmd: [ './make-pdf.sh', '{{postfile}}' ]
+             cmd: [ './make-html.sh', '{{postfile}}' ]
              mime-type: 'application/pdf'
 #         post: 'file://./data/posts/{{post}}.html'  # the unprocessed 
 #  required: [ 'post' ]   # property which must exist - always true? 
-#  template: 'page.html'
+  template: 'page.html'
 
 
 #rules:
